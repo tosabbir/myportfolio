@@ -27,12 +27,12 @@
 
       <!-- Header -->
       <header class="header fixed-top d-flex align-content-center flex-wrap">
-         <!-- Logo -->
+         {{-- <!-- Logo -->
          <div class="logo">
             <a href="index.html" class="default-logo"><img src="{{asset('/backend/assets/img/mylogo.png')}}" alt=""></a>
             <a href="index.html" class="mobile-logo"><img src="{{asset('/backend/assets/img/mylogo.png')}}" alt=""></a>
          </div>
-         <!-- End Logo -->
+         <!-- End Logo --> --}}
 
          <!-- Main Header -->
          <div class="main-header">

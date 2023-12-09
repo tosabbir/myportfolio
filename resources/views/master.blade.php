@@ -9,6 +9,7 @@
     <meta name="robots" content="noindex, follow" />
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('frontend')}}/assets/images.ico">
     <!-- CSS
@@ -21,9 +22,14 @@
     <link rel="stylesheet" href="{{asset('frontend')}}/assets/css/slick-theme.css">
     <link rel="stylesheet" href="{{asset('frontend')}}/assets/css/aos.css">
     <link rel="stylesheet" href="{{asset('frontend')}}/assets/css/feature.css">
-    <!-- Style css -->
 
+    <!-- Style css -->
     <link rel="stylesheet" href="{{asset('frontend')}}/assets/css/style.css">
+
+    {{-- sweet alert cdn  --}}
+    {{-- <link rel="stylesheet" href="sweetalert2.min.css">
+    <script src="sweetalert2.min.js"></script> --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body class="template-color-1 spybody" data-spy="scroll" data-target=".navbar-example2" data-offset="70">
@@ -154,6 +160,9 @@
             </div>
         </div>
     </div>
+
+
+
     <!-- End Footer Area -->
     <!-- JS ============================================ -->
     <script src="{{asset('frontend')}}/assets/js/jquery.min.js"></script>
@@ -176,6 +185,19 @@
     <script>
 
         document.addEventListener('DOMContentLoaded', function(){
+
+            @if (session('success'))
+
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "{{ session('success') }}",
+                    showConfirmButton: false,
+                    timer: 2500
+                });
+
+            @endif
+
             // find from here
             document.getElementById('contactFrom').addEventListener('submit', function (event) {
                 // prevent submit here
@@ -270,53 +292,10 @@
             document.getElementById('messageError').textContent = '';
            }
 
-
-
-
-            return true;
+           return true;
         }
 
     </script>
-
-
-
-{{-- /////////////// --}}
-{{-- document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('myForm').addEventListener('submit', function(event) {
-        if (!validateForm()) {
-            event.preventDefault();
-        }
-    });
-
-    function validateForm() {
-        var name = document.getElementById('name').value;
-        var email = document.getElementById('email').value;
-
-        var errors = [];
-
-        // Validate name (non-empty)
-        if (name.trim() === '') {
-            errors.push('Name is required.');
-        }
-
-        // Validate email (non-empty and valid email format)
-        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (email.trim() === '') {
-            errors.push('Email is required.');
-        } else if (!emailRegex.test(email)) {
-            errors.push('Invalid email format.');
-        }
-
-        // Display errors (if any)
-        if (errors.length > 0) {
-            alert(errors.join('\n'));
-            return false;
-        }
-
-        return true;
-    }
-}); --}}
-
 
 
 </body>

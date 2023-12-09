@@ -1852,7 +1852,7 @@
                                 <p>I am available for freelance work. Connect with me via and call in to my account.
                                 </p>
                                 <span class="phone">Phone: <a href="">+8801718022214</a></span>
-                                <span class="mail">Email: <a href="">tauhid10030@gmail.com</a></span>
+                                <span class="mail">Email: <a href="">tosabbir313@gmail.com</a></span>
                             </div>
                             <div class="social-area">
                                 <div class="name">FIND WITH ME</div>
@@ -1871,6 +1871,9 @@
                     </div>
                     <div data-aos-delay="600" class="col-lg-7 contact-input">
                         <div class="contact-form-wrapper">
+
+
+
                             <div class="introduce">
 
                                 <form class="rnt-contact-form rwt-dynamic-form row" id="contactFrom"  action="{{route('store.message')}}" method="POST">
@@ -2113,5 +2116,4 @@
 
     </main>
 @endsection
-
 
