@@ -52,9 +52,9 @@
                                         <div class="skill-share-inner">
                                             <span class="title">Contact Now</span>
                                             <ul class="skill-share d-flex liststyle">
-                                                <li><a href="tel:+1234567890" class="contact_link"><i class="fas fa-phone fs-2"></i></a></li>
-                                                <li><a href="https://wa.me/1234567890" class="contact_link"><i class="fab fa-whatsapp fs-2"></i></a></li>
-                                                <li> <a href="mailto:your.email@example.com" class="contact_link"><i class="fas fa-envelope fs-2"></i></a></li>
+                                                <li><a href="tel:+8801718022214" class="contact_link"><i class="fas fa-phone fs-2"></i></a></li>
+                                                <li><a href="https://wa.me/+8801718022214" class="contact_link"><i class="fab fa-whatsapp fs-2"></i></a></li>
+                                                <li> <a href="mailto:your.tosabbir313@gmail.com" class="contact_link"><i class="fas fa-envelope fs-2"></i></a></li>
                                             </ul>
                                         </div>
                                     </div>
