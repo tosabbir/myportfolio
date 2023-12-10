@@ -21,13 +21,26 @@
           </li>
           <li>
              <a href="#">
-                <i class="icofont-shopping-cart"></i>
-                <span class="link-title">Manage Home</span>
+                <i class="icofont-home"></i>
+                <span class="link-title">Home</span>
              </a>
 
              <!-- Sub Menu -->
              <ul class="nav sub-menu">
                 <li><a href="pages/ecommerce/ecommerce.html">Banner Info</a></li>
+             </ul>
+             <!-- End Sub Menu -->
+          </li>
+
+          <li>
+             <a href="#">
+                <i class="icofont-chat"></i>
+                <span class="link-title">Messages</span>
+             </a>
+
+             <!-- Sub Menu -->
+             <ul class="nav sub-menu">
+                <li><a href="{{route('all.messages')}}">All Messages</a></li>
              </ul>
              <!-- End Sub Menu -->
           </li>

@@ -62,13 +62,12 @@
                             <li class="nav-item current"><a class="nav-link" href="#clients">Clients</a></li>
                             <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
                             <li class="nav-item"><a class="nav-link" href="#blog">blog</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#contacts">Contact</a></li>
                         </ul>
                         <!-- End Mainmanu Nav -->
                     </nav>
                     <!-- Start Header Right  -->
                     <div class="header-right">
-                        <a class="rn-btn" target="_blank" href=""><span>HIRE NOW</span></a>
+                        <a class="rn-btn nav-link" href="#contacts"><span>HIRE NOW</span></a>
                         <div class="hamberger-menu d-block d-xl-none">
                             <i id="menuBtn" class="feather-menu humberger-menu"></i>
                         </div>
@@ -198,15 +197,24 @@
 
             @endif
 
-            // find from here
+            // find contact from here
             document.getElementById('contactFrom').addEventListener('submit', function (event) {
                 // prevent submit here
                 if(!contactFromValidation()){
                     event.preventDefault();
                 }
              })
+
+            // find comment from here
+            document.getElementById('commentFrom').addEventListener('submit', function (event) {
+                // prevent submit here
+                if(!commentFromValidation()){
+                    event.preventDefault();
+                }
+             })
         })
-        // from validation here
+
+        //contact from validation here
         function contactFromValidation(){
 
             let name = document.getElementById('name').value;
@@ -290,6 +298,79 @@
 
            }else{
             document.getElementById('messageError').textContent = '';
+           }
+
+           return true;
+        }
+
+        //comment from validation here
+        function commentFromValidation(){
+
+            let name = document.getElementById('comment_name').value;
+            let phone = document.getElementById('comment_phone').value;
+            let email = document.getElementById('comment_email').value;
+            let message = document.getElementById('comment_message').value;
+            let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            let phoneRegex = /^\+?\d*$/;
+            let numericRegex = /^[0-9]+$/;
+
+        //   name
+           if(name == ""){
+            document.getElementById('comment_name').focus();
+            document.getElementById('comment_nameError').textContent = 'Please Enter Your Name';
+            return false
+
+           }else if(numericRegex.test(name)){
+            document.getElementById('comment_name').focus();
+            document.getElementById('comment_nameError').textContent = 'Please Enter Valid Name';
+            return false
+          }else{
+            document.getElementById('comment_nameError').textContent = '';
+          }
+
+        //    phone
+           if(phone == ""){
+            document.getElementById('comment_phone').focus();
+            document.getElementById('comment_phoneError').textContent = 'Please Enter Your Phone';
+            return false;
+
+           }else if (!phoneRegex.test(phone)) {
+            document.getElementById('comment_phone').focus();
+            document.getElementById('comment_phoneError').textContent = 'Please Enter Valid phone';
+            return false;
+
+           }else{
+            document.getElementById('comment_phoneError').textContent = '';
+           }
+
+        //    email
+           if(email == ""){
+            document.getElementById('comment_email').focus();
+            document.getElementById('comment_emailError').textContent = 'Please Enter Your Email';
+            return false;
+
+           }else if (!emailRegex.test(email)) {
+            document.getElementById('comment_email').focus();
+            document.getElementById('comment_emailError').textContent = 'Please Enter Valid Email';
+            return false;
+
+           }else{
+            document.getElementById('comment_emailError').textContent = '';
+           }
+
+        //    message
+           if(message == ""){
+            document.getElementById('comment_message').focus();
+            document.getElementById('comment_messageError').textContent = 'Please Enter Your message';
+            return false;
+
+           }else if (numericRegex.test(message)) {
+            document.getElementById('comment_message').focus();
+            document.getElementById('comment_messageError').textContent = 'Please Enter Valid message';
+            return false;
+
+           }else{
+            document.getElementById('comment_messageError').textContent = '';
            }
 
            return true;

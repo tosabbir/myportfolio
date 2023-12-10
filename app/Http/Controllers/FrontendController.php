@@ -37,4 +37,27 @@ class FrontendController extends Controller
         $name = $request->name;
         return back()->with('success', 'Thank You '.$name.' For Contact With Us');
     }
+
+    // store comment
+    public function storeComment(Request $request){
+
+
+        $request->validate([
+            'name'=>'required|string|max:20',
+            'email'=>'required|email|max:30',
+            'phone'=>'required|max:20',
+            'message'=>'required|string|max:255',
+        ]);
+
+        Message::insert([
+            'name' => $request->name,
+            'phone' => $request->phone,
+            'email' => $request->email,
+            'message' => $request->message,
+            'created_at' => Carbon::now(),
+        ]);
+
+        $name = $request->name;
+        return back()->with('success', 'Thank You '.$name.' For Contact With Us');
+    }
 }

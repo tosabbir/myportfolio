@@ -1917,6 +1917,7 @@
                                         <div class="form-group">
                                             <label for="subject">subject</label>
                                             <input class="form-control form-control-sm" id="subject" name="subject" type="text" value="{{ old('subject') }}">
+
                                             <span class="text-danger" id="subjectError"></span>
                                             @error('subject')
                                                 <span class="text-danger">{{$message}}</span>
@@ -1967,7 +1968,31 @@
                             <div class="col-lg-6">
                                 <div class="portfolio-popup-thumbnail">
                                     <div class="image">
-                                        <img class="w-100" src="{{asset('frontend')}}/assets/images/portfolio-04.jpg" alt="slide">
+
+
+                                        {{-- portfolio slider  --}}
+                                        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                                            <div class="carousel-inner">
+                                              <div class="carousel-item active">
+                                                <img src="{{asset('frontend')}}/assets/images/portfolio-04.jpg" class="d-block w-100" alt="sabbir portfolio image">
+                                              </div>
+                                              <div class="carousel-item">
+                                                <img src="{{asset('frontend')}}/assets/images/portfolio-04.jpg" class="d-block w-100" alt="sabbir portfolio image">
+                                              </div>
+                                              <div class="carousel-item">
+                                                <img src="{{asset('frontend')}}/assets/images/portfolio-04.jpg" class="d-block w-100" alt="sabbir portfolio image">
+                                              </div>
+                                            </div>
+                                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                              <span class="visually-hidden">Previous</span>
+                                            </button>
+                                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                              <span class="visually-hidden">Next</span>
+                                            </button>
+                                          </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -1989,10 +2014,17 @@
                                             <i data-feather="chevron-right"></i>
                                         </a>
                                     </div>
-
                                 </div>
                                 <!-- End of .text-content -->
                             </div>
+                            <!-- Comment Section Area Start -->
+                           <div class="comment-inner">
+                               <h3 class="title mb--40 mt--50">Leave a Reply</h3>
+
+                                   @include('includes.comment_form')
+
+                           </div>
+                           <!-- Comment Section End -->
                         </div>
                         <!-- End of .row Body-->
                     </div>
@@ -2078,26 +2110,9 @@
                         <!-- Comment Section Area Start -->
                         <div class="comment-inner">
                             <h3 class="title mb--40 mt--50">Leave a Reply</h3>
-                            <form action="#">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-12 col-12">
-                                        <div class="rnform-group"><input type="text" placeholder="Name">
-                                        </div>
-                                        <div class="rnform-group"><input type="email" placeholder="Email">
-                                        </div>
-                                        <div class="rnform-group"><input type="text" placeholder="Website">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-12 col-12">
-                                        <div class="rnform-group">
-                                            <textarea placeholder="Comment"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <a class="rn-btn" href="#"><span>SUBMIT NOW</span></a>
-                                    </div>
-                                </div>
-                            </form>
+
+                                @include('includes.comment_form')
+
                         </div>
                         <!-- Comment Section End -->
                     </div>

@@ -1,10 +1,10 @@
-@include('backend.includes.header')
+@include('admin.includes.header')
 <!-- End Header -->
 
 <!-- Main Wrapper -->
 <div class="main-wrapper">
    <!-- Sidebar -->
-      @include('backend.includes.sidebar')
+      @include('admin.includes.sidebar')
    <!-- End Sidebar -->
 
    <!-- Main Content -->
@@ -19,11 +19,11 @@
 <!-- End Main Wrapper -->
 
 <!-- Footer -->
-  @include('backend.includes.footer')
+  @include('admin.includes.footer')
 <!-- End Footer -->
 </div>
 <!-- End wrapper -->
 
 {{-- js link here  --}}
 
-@include('backend.includes.js')
+@include('admin.includes.js')

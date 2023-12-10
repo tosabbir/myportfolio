@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('phone', 20)->nullable();
             $table->string('subject', 100)->nullable();
             $table->string('message', 255)->nullable();
+            $table->enum('status', ['unread', 'read', 'replayed', 'no-replayed'])->default('unread');
             $table->timestamps();
         });
     }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -22,9 +23,9 @@ Route::get('/', function () {
 });
 
 Route::controller(FrontendController::class)->group(function () {
-
     Route::get('/download/cv', 'downloadCV')->name('download.cv');
     Route::post('/store/message', 'storeMessage')->name('store.message');
+    Route::post('/store/comment', 'storeComment')->name('store.comment');
 });
 
 
@@ -35,6 +36,15 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
+
+    Route::controller(AdminController::class)->group(function () {
+        Route::get('/all/messages', 'allMessages')->name('all.messages');
+        Route::get('/details/messages/{id}', 'detailsMessages')->name('details.messages');
+        Route::get('/replay/messages/{id}', 'replayMessages')->name('replay.messages');
+    });
+
+
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
