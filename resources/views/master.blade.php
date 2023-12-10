@@ -30,9 +30,13 @@
     {{-- <link rel="stylesheet" href="sweetalert2.min.css">
     <script src="sweetalert2.min.js"></script> --}}
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+
+
 </head>
 
-<body class="template-color-1 spybody" data-spy="scroll" data-target=".navbar-example2" data-offset="70">
+<body class="template-color-1 spybody relative" data-spy="scroll" data-target=".navbar-example2" data-offset="70">
 
     <!-- Start Header -->
     <header class="rn-header haeder-default black-logo-version header--fixed header--sticky">
@@ -183,8 +187,12 @@
 
     <script>
 
-        document.addEventListener('DOMContentLoaded', function(){
+        function clicks(){
+            alert('sdfa');
+        }
 
+        document.addEventListener('DOMContentLoaded', function(){
+            // sweet alert here
             @if (session('success'))
 
                 Swal.fire({
@@ -375,6 +383,14 @@
 
            return true;
         }
+
+        document.querySelectorAll('.contact_link').forEach(link => {
+            link.addEventListener('click', function(event) {
+            event.preventDefault();
+            console.log('jhgjg');
+            window.open(this.href, '_blank');
+            });
+        });
 
     </script>
 

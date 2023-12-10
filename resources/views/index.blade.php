@@ -47,13 +47,14 @@
                                             </ul>
                                         </div>
                                     </div>
+
                                     <div class="col-lg-6 col-xl-6 col-md-6 col-sm-6 col-12 mt_mobile--30">
                                         <div class="skill-share-inner">
-                                            <span class="title">best skill on</span>
+                                            <span class="title">Contact Now</span>
                                             <ul class="skill-share d-flex liststyle">
-                                                <li><img src="{{asset('frontend')}}/assets/images/icons-01.png" alt="Icons Images"></li>
-                                                <li><img src="{{asset('frontend')}}/assets/images/icons-02.png" alt="Icons Images"></li>
-                                                <li><img src="{{asset('frontend')}}/assets/images/icons-03.png" alt="Icons Images"></li>
+                                                <li><a href="tel:+1234567890" class="contact_link"><i class="fas fa-phone fs-2"></i></a></li>
+                                                <li><a href="https://wa.me/1234567890" class="contact_link"><i class="fab fa-whatsapp fs-2"></i></a></li>
+                                                <li> <a href="mailto:your.email@example.com" class="contact_link"><i class="fas fa-envelope fs-2"></i></a></li>
                                             </ul>
                                         </div>
                                     </div>

@@ -19712,3 +19712,15 @@ body.white-version .rn-btn-ulderline {
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
 } */
+
+
+.contact_icon{
+    position: absolute;
+    top: 0;
+    right:0;
+
+    background-color: #0077B5;
+}
+.contact_icon_ul{
+    list-style: none;
+}

@@ -66,10 +66,16 @@
                               </div>
                            </a>
                            <div class="dropdown-menu">
-                              <a href="#">My Profile</a>
+                              <a href="{{route('profile.edit')}}">My Profile</a>
                               <a href="#">task</a>
                               <a href="#">Settings</a>
-                              <a href="#">Log Out</a>
+
+                               <form method="POST" action="{{route('logout')}}">
+                               @csrf
+                                <a  onclick="event.preventDefault();
+                                this.closest('form').submit();">Log Out</a>
+                                </form>
+
                            </div>
                         </div>
                         <!-- End Main Header User -->
@@ -89,45 +95,7 @@
                      <!-- Header Right -->
                      <div class="main-header-right d-flex justify-content-end">
                         <ul class="nav">
-                           <li class="ml-0">
-                              <!-- Main Header Language -->
-                              <div class="main-header-language">
-                                 <a href="#" data-toggle="dropdown">
-                                    <img src="{{asset('/backend/assets/img/svg/globe-icon.svg')}}" alt="">
-                                 </a>
-                                 <div class="dropdown-menu style--three">
-                                    <a href="#">
-                                       <span><img src="{{asset('/backend/assets/img/usa.png')}}" alt=""></span>
-                                       USA
-                                    </a>
-                                    <a href="#">
-                                       <span><img src="{{asset('/backend/assets/img/china.png')}}" alt=""></span>
-                                       China
-                                    </a>
-                                    <a href="#">
-                                       <span><img src="{{asset('/backend/assets/img/russia.png')}}" alt=""></span>
-                                       Russia
-                                    </a>
-                                    <a href="#">
-                                       <span><img src="{{asset('/backend/assets/img/spain.png')}}" alt=""></span>
-                                       Spain
-                                    </a>
-                                    <a href="#">
-                                       <span><img src="{{asset('/backend/assets/img/brazil.png')}}" alt=""></span>
-                                       Brazil
-                                    </a>
-                                    <a href="#">
-                                       <span><img src="{{asset('/backend/assets/img/france.png')}}" alt=""></span>
-                                       France
-                                    </a>
-                                    <a href="#">
-                                       <span><img src="{{asset('/backend/assets/img/algeria.png')}}" alt=""></span>
-                                       Algeria
-                                    </a>
-                                 </div>
-                              </div>
-                              <!-- End Main Header Language -->
-                           </li>
+
                            <li class="ml-0 d-none d-lg-flex">
                               <!-- Main Header Print -->
                               <div class="main-header-print">
