@@ -41,6 +41,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/all/messages', 'allMessages')->name('all.messages');
         Route::get('/details/messages/{id}', 'detailsMessages')->name('details.messages');
         Route::get('/replay/messages/{id}', 'replayMessages')->name('replay.messages');
+        Route::post('/send/mail/{id}', 'sendMail')->name('send.mail');
     });
 
 

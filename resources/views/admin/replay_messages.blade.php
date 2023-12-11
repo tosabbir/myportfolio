@@ -16,11 +16,17 @@
 
                 <!-- Main Mail -->
                 <div class="mail-compose">
-                    <form action="#" method="post">
+                    <form action="{{route('send.mail',$data->id)}}" method="post" enctype="multipart/form-data">
+                        @csrf
+                        <div class="form-group align-items-md-center media flex-column flex-md-row">
+                            <label for="name" class="font-14 bold">Name</label>
+                            <div class="media-body w-100"><input class="theme-input-style style--two" type="text" id="name" name="name" value="Sabbir Ahmed"></div>
+                           
+                        </div>
                         <div class="form-group align-items-md-center media flex-column flex-md-row">
                             <label for="sending_to" class="font-14 bold">Sending To</label>
                             <div class="input-wrap d-flex align-items-center media-body flex-wrap">
-                                <input class="theme-input-style style--two" type="email" id="sending_to" value="{{$data->email}}">
+                                <input class="theme-input-style style--two" type="email" id="sending_to" value="{{$data->email}}" name="email">
                             </div>
                             <div class="d-flex align-items-center cc-btns">
                                 <h4 class="d-block mr-3 cc cc-btn">Cc</h4>
@@ -32,7 +38,7 @@
                             <div class="form-group cc-form-group media align-items-md-center flex-column flex-md-row">
                                 <label for="cc" class="font-14 bold">Cc</label>
                                 <div class="input-wrap d-flex align-items-center media-body flex-wrap">
-                                    <input class="theme-input-style style--two" type="email" id="cc">
+                                    <input class="theme-input-style style--two" type="email" id="cc" name="cc">
                                 </div>
                             <div class="close-btn">
                                 <img src="{{asset('backend')}}/assets/img/svg/close.svg" alt="" class="svg">
@@ -41,7 +47,7 @@
                             <div class="form-group bcc-form-group media align-items-md-center flex-column flex-md-row">
                                 <label for="bcc" class="font-14 bold">Bcc</label>
                                 <div class="input-wrap d-flex align-items-center media-body flex-wrap">
-                                    <input class="theme-input-style style--two" type="email" id="bcc">
+                                    <input class="theme-input-style style--two" type="email" id="bcc" name="bcc">
                                 </div>
                                 <div class="close-btn">
                                     <img src="{{asset('backend')}}/assets/img/svg/close.svg" alt="" class="svg">
@@ -51,12 +57,12 @@
 
                         <div class="form-group align-items-md-center media flex-column flex-md-row">
                             <label for="subject" class="font-14 bold">Subject</label>
-                            <div class="media-body w-100"><input class="theme-input-style style--two" type="text" id="subject"></div>
-                        <div class="cc-btns"></div>
+                            <div class="media-body w-100"><input class="theme-input-style style--two" type="text" id="subject" name="subject"></div>
+                            <div class="cc-btns"></div>
                         </div>
 
                         <div class="summernote">
-                            <textarea name="editordata" data-trigger="summernote"></textarea>
+                            <textarea name="message" data-trigger="summernote"></textarea>
 
                             <div class="note-editor-bottom d-flex justify-content-between align-content-center">
                                 <div class="d-flex align-items-center">

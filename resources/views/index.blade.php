@@ -1868,6 +1868,16 @@
                                     </ul>
                                 </div>
                             </div>
+                            <div class="social-area">
+                                <div class="name">CONTACT NOW</div>
+                                <div class="social-icone">
+                                    <ul class="social-share d-flex liststyle">
+                                       <li><a href="tel:+8801718022214" class="contact_link"><i class="fas fa-phone fs-2"></i></a></li>
+                                       <li><a href="https://wa.me/+8801718022214" class="contact_link"><i class="fab fa-whatsapp fs-2"></i></a></li>
+                                        <li> <a href="mailto:tosabbir313@gmail.com" class="contact_link"><i class="fas fa-envelope fs-2"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div data-aos-delay="600" class="col-lg-7 contact-input">

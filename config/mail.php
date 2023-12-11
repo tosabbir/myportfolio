@@ -13,7 +13,9 @@ return [
     |
     */
 
-    'default' => env('MAIL_MAILER', 'smtp'),
+    // change here 
+    // 'default' => env('MAIL_MAILER', 'smtp'),
+    'default' => env('mailgun', 'smtp'),
 
     /*
     |--------------------------------------------------------------------------
@@ -50,11 +52,16 @@ return [
             'transport' => 'ses',
         ],
 
+        // change here
+        // 'mailgun' => [
+        //     'transport' => 'mailgun',
+
+        // ],
+
         'mailgun' => [
             'transport' => 'mailgun',
-            // 'client' => [
-            //     'timeout' => 5,
-            // ],
+            'domain' => env('MAILGUN_DOMAIN'),
+            'secret' => env('MAILGUN_SECRET'),
         ],
 
         'postmark' => [
